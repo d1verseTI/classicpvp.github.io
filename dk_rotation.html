@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Death Knight PVP Rotation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script>
+    <script src="https://wow.zamimg.com/js/tooltips.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="homepage-image"></div>
+    <h1>Death Knight PVP Rotation</h1>
+    <div class="inside-body">
+        <div class="rotation">
+            <div>
+                <h2 class="rotation-header">Basic Rotation</h2>
+                <ul class="spell-list" id="basic-rotation-list"></ul>
+            </div>
+        </div>
+        <div class="rotation">
+            <div>
+                <h2 class="rotation-header">Burst Rotation</h2>
+                <ul class="spell-list" id="burst-rotation-list"></ul>
+            </div>
+        </div>
+        <div class="rotation">
+            <div>
+                <h2 class="rotation-header">Kill Healer Rotation</h2>
+                <ul class="spell-list" id="kill-healer-rotation-list"></ul>
+            </div>
+        </div>
+        <div class="arena-teams">
+            <h2 class="arena-teams-header">Popular Arena Teams</h2>
+            <ul class="arena-teams-list" id="arena-teams-list"></ul>
+        </div>
+    
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade" data-backdrop="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" id="secClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dk.js"></script>
+    <script src="matchups/dk_preg.js"></script>
+    <script src="mdConvert.js"></script>
+    <script>
+        function createTooltipHtml(spell) {
+            console.log(spell)
+            const tooltipDiv = document.createElement('div');
+            tooltipDiv.classList.add('customtooltip');
+            tooltipDiv.style.display = 'none';
+
+            const nameDiv = document.createElement('div');
+            nameDiv.classList.add('name');
+            nameDiv.textContent = spell.name;
+
+            const rankDiv = document.createElement('div');
+            rankDiv.classList.add('rank');
+            rankDiv.textContent = `Rank ${spell.rank}`;
+
+            const typeDiv = document.createElement('div');
+            typeDiv.classList.add('type');
+            typeDiv.textContent = spell.type;
+
+            const costDiv = document.createElement('div');
+            costDiv.classList.add('cost');
+            costDiv.textContent = `${spell.cost} ${spell.costType}`;
+
+            const rangeDiv = document.createElement('div');
+            rangeDiv.classList.add('range');
+            rangeDiv.textContent = spell.range;
+
+            const castTimeDiv = document.createElement('div');
+            castTimeDiv.classList.add('cast-time');
+            castTimeDiv.textContent = spell.castTime;
+
+            const cooldownDiv = document.createElement('div');
+            cooldownDiv.classList.add('cooldown');
+            cooldownDiv.textContent = spell.cooldown;
+
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.classList.add('description');
+            descriptionDiv.textContent = spell.description;
+
+            tooltipDiv.appendChild(nameDiv);
+            tooltipDiv.appendChild(rankDiv);
+            tooltipDiv.appendChild(typeDiv);
+            tooltipDiv.appendChild(costDiv);
+            tooltipDiv.appendChild(rangeDiv);
+            tooltipDiv.appendChild(castTimeDiv);
+            tooltipDiv.appendChild(cooldownDiv);
+            tooltipDiv.appendChild(descriptionDiv);
+
+            return tooltipDiv;
+        }
+
+        function displayRotation(rotationList, actualRotation, additionalTooltips) {
+            actualRotation.forEach((spell, index) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('spell-list-item');
+
+                
+                const icon = document.createElement('img');
+                icon.classList.add('spell-icon');
+                icon.src = spell.icon;
+                icon.alt = `${spell.name} Icon`;
+        
+                if(spell.link) { 
+                    const iconLink = document.createElement('a');
+                    iconLink.href = spell.link;
+                    setTimeout(() => {
+                        const existingSpan = iconLink.querySelector('span');
+                        if (existingSpan) existingSpan.remove();
+                        iconLink.appendChild(icon);
+                        iconLink.style = "";
+                        iconLink.classList.remove('icontinyl');
+                    }, 250);
+
+                    listItem.appendChild(iconLink);
+                }
+                else {
+                    listItem.appendChild(icon);
+                }
+                
+                // iconLink.appendChild(icon)
+
+                // Remove any existing span elements inside the icon link
+                
+                // if(additionalTooltips) {
+                //     const tooltip = additionalTooltips?.find((tooltip) => tooltip.spell.name === spell.name);
+                //     if(tooltip) icon.title = tooltip.text;
+                // }
+                // if (spell.name === Spells.DEATH_GRIP.name) icon.title = 'Grip him in the OPEN & on Desecration **optional**';
+
+                // const tooltip = createTooltipHtml(spell, additionalTooltips);
+                    
+                // icon.addEventListener('mouseover', () => {
+                //     tooltip.style.display = 'block';
+                // });
+
+                // icon.addEventListener('mouseout', () => {
+                //     tooltip.style.display = 'none';
+                // });
+
+                // listItem.appendChild(tooltip);
+
+                // Check if this is the last item in the array
+                if (index !== actualRotation.length - 1) {
+                    const next = document.createTextNode(' -> ');
+                    listItem.appendChild(next);
+                }
+
+                rotationList.appendChild(listItem);
+            });
+        }
+
+        // Display the basic rotation
+        const basicRotationList = document.getElementById('basic-rotation-list');
+        displayRotation(basicRotationList, basicRotation);
+        
+        // Display the burst rotation
+        const burstRotationList = document.getElementById('burst-rotation-list');
+        displayRotation(burstRotationList, burstRotation);
+
+        // Display the kill-healer rotation
+        const killHealerRotationList = document.getElementById('kill-healer-rotation-list');
+        const additionalTooltips = [
+            { spell: Spells.DEATH_GRIP, text: 'Grip him in the OPEN & on Desecration **optional**' },
+        ];
+        displayRotation(killHealerRotationList, killHealerRotation, additionalTooltips);
+
+
+        // Display the arena teams
+        const arenaTeamsList = document.getElementById('arena-teams-list');
+
+        // Add the DK and Preg team
+        const dkPregTeam = document.createElement('li');
+        const dkPregTeamText = document.createTextNode(`${arenaTeamDKPreg.name}: ${arenaTeamDKPreg.members.join(' + ')}`);
+        dkPregTeam.appendChild(dkPregTeamText);
+
+        // Add the matchup guides for DK and Preg team
+        const dkPregGuidesList = document.createElement('ul');
+        dkPregGuidesList.classList.add('matchup-guides-list');
+
+        // Get the modal and its components
+        const modal = document.getElementById('myModal');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalBody = modal.querySelector('.modal-body');
+        // Get the close buttons
+        const closeButton = modal.querySelector('.close');
+        const closeButton2 = document.getElementById('secClose');
+
+        // Add a click event listener to the close button
+        closeButton.addEventListener('click', () => {
+            // Hide the modal
+            modal.style.display = 'none';
+        });
+
+        // Add a click listener to the modal backdrop
+        modal.addEventListener('click', (event) => {
+        // Check if the clicked element is the modal backdrop
+            // if (event.target === modal) {
+                // Hide the modal
+                modal.style.display = 'none';
+                document.querySelector('.clicked').classList.remove('clicked');
+            // }
+        });
+
+        // Add a click event listener to the matchup guide list item
+        arenaTeamDKPreg.matchupGuides.forEach(matchup => {
+            const guideListItem = document.createElement('li');
+            const guideListItemLink = document.createElement('div');
+            guideListItem.classList.add('arena-teams-list-item')
+            // guideListItemLink.href = '#';
+            guideListItemLink.textContent = matchup.name;
+
+            // Add a click event listener to the matchup guide list item
+            guideListItem.addEventListener('click', () => {
+
+                // Add the 'clicked' class to the clicked item
+                guideListItem.classList.add('clicked');
+                // Set the modal title and body to the matchup guide's name and text
+                modalTitle.textContent = matchup.name;
+                modalBody.innerHTML = markdownToHtml(matchup.text);
+
+                // Show the modal
+                modal.classList.add('show');
+                modal.style.display = 'block';
+
+                closeButton.addEventListener('click', () => {
+                    // Hide the modal
+                    modal.style.display = 'none';
+                    // Remove the 'clicked' class from the clicked item
+                    guideListItem.classList.remove('clicked');
+                });
+                closeButton2.addEventListener('click', () => {
+                    // Hide the modal
+                    modal.style.display = 'none';
+                    // Remove the 'clicked' class from the clicked item
+                    guideListItem.classList.remove('clicked');
+                });
+
+            });
+
+            guideListItem.appendChild(guideListItemLink);
+            dkPregGuidesList.appendChild(guideListItem);
+        });
+
+        dkPregTeam.appendChild(dkPregGuidesList);
+        arenaTeamsList.appendChild(dkPregTeam);
+
+// Add more teams here
+
+
+    </script>
+</body>
+
+</html>

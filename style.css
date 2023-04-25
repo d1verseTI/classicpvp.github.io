@@ -1,0 +1,247 @@
+/* Set global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ddd;
+  background-color: #1a1a1a;
+  margin: 0;
+  /* padding: 0px 10px; */
+}
+
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.homepage-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://wowsims.github.io/wotlk/assets/img/wotlk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.inside-body {
+ padding: 20px;
+}
+
+/* Style for each rotation section */
+.rotation {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 50px;
+}
+
+.rotation-header {
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.spell-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+}
+
+.spell-list-item {
+  margin-right: 10px;
+  display: flex;
+  align-items: start;
+}
+
+.spell-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Style for each arena team section */
+.arena-teams {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 50px;
+}
+
+.arena-teams-header {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.arena-teams-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.arena-teams-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin: 5px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: #c8be60;
+  font-family: Arial, sans-serif;
+  transition: transform 0.5s ease;
+  cursor: default; /* set the default cursor */
+}
+.arena-teams-list-item.clicked {
+  background-color: #666;
+  transform: translateX(10px);
+}
+
+.arena-teams-list-item:hover {
+  transform: translateX(10px);
+  cursor: pointer; /* change the cursor to a pointer on hover */
+}
+
+.arena-team-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: start;
+}
+
+.arena-team-members {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.arena-team-member {
+  display: flex;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.arena-team-member-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.arena-team-member-name {
+  font-size: 16px;
+  text-align: start;
+}
+
+/* Dark theme for modal */
+.modal-header {
+  background-color: #4d4d4d;
+  color: #fff;
+  border-bottom: none;
+}
+
+.modal-content {
+  background-color: #313131;
+  color: #fff;
+}
+
+hr {
+  border-top: 1px solid #fff;
+}
+
+.modal-dialog {
+  max-width: 100%;
+  margin-left: 20%;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: #fff;
+}
+
+.modal-body {
+  background-color: #313131;
+  color: #fff;
+  overflow-y: auto;
+  max-height: 80vh;
+  padding: 20px;
+}
+
+.modal-footer {
+  background-color: #4d4d4d;
+  border-top: none;
+}
+
+.modal-footer .btn {
+  background-color: #f9ec78;
+  color: #666;
+}
+
+.modal-footer .btn:hover {
+  background-color: #c8be60;
+  color: #fff;
+}
+
+.modal-backdrop.show {
+  opacity: 0.5;
+  background-color: #000;
+}
+
+.modal-backdrop {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+
+.close {
+  color: #fff;
+}
+
+.customtooltip {
+  position: absolute;
+  z-index: 9999;
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.customtooltip .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.customtooltip .desc {
+  margin-bottom: 10px;
+}
+
+.customtooltip .requirement {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.customtooltip .requirement::before {
+  content: "•";
+  margin-right: 5px;
+}
+
+.customtooltip .requirement:last-child {
+  margin-bottom: 0;
+}
+
+

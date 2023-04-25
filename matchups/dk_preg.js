@@ -46,7 +46,7 @@ const arenaTeamDKPreg = {
         },
         {
             name: "vs War & HPal",
-            text: "This is a really fun matchup overall, especially since dk teams near universally struggle vs this comp. The dk and preg have many viable paths to victory, but the ease of execution depends on the skill/playstyle of your opponents. \n"
+            text: "This is a really fun matchup overall, especially since DK teams near universally struggle vs this comp. The dk and preg have many viable paths to victory, but the ease of execution depends on the skill/playstyle of your opponents. \n"
             +"For hyper aggressive warriors, it may be simpler to drag and kite him around pillar while threatening rep on the hpal to bait out his sacrifice. Best time to rep the hpal is after divine sacrifice is used and he puts freedom on the warrior. You can full hoj the warrior after you force his trinket, which is usually possible to bait out with a gnaw on freedom synergized with a rep/hoj on pala. \n"
             +"After you can force trinket from the warrior, he is vulnerable to a kill inside of a full hoj later, especially if it is protected by 5 stacks of seal vengeance/chains. Send this go after the pala uses his hand of sacrifice, preferably on the warriors freedom; so they will not be able to mitigate damage on the war between holy shocks/break out of rep without using bubble immediately \n"
             +"You can also kill the paladin with a grip HoJ go, if the paladin sacs your opening repentance and uses freedom/sacred shield on the warrior, look for a swap on him and you may be able to force a trink with a simple hoj go, or bubble with hoj strang if he sits it \n"
@@ -64,24 +64,24 @@ const arenaTeamDKPreg = {
             name: "vs Feral & Disc",
             text: "**Darius:** \n"
             +"This was a really tough counter in s5, but with new weapons and sigil in s6 it feels relatively easy/winnable; simply tunneling the priest into the ground has worked out well for us so far. In late s6 and with some creative gearing it may also be possible to oom them by dragging the feral los and avoiding fears on the preg from the priest with rep/hoj threat \n"
-            +"To tunnel the disc down, it is important to avoid the pounce as the feral can come close to killing you in it; pala should be ready to freedom it immediately as a backup. I like to start with chains ibf on priest, if you can connect him before the feral it's very good as you have freedom available for bash/bear root. Your preg should be using his cooldowns offensively - to keep you on the priest and under minimal pressure. Be careful with the order, it is often more efficient to bubble sooner than later due to the threat of clone which can only be trinketted. \n"
+            +"To tunnel the disc down, it is important to avoid the pounce as the feral can come close to killing you in it; pala should be ready to freedom it immediately as a backup. I like to start with chains ibf on priest, if you can connect him before the feral it's very good as you have freedom available for bash/bear root. Your preg should be using his cooldowns offensively - to keep you on the priest and under minimal pressure. Be careful with the order, it is often more efficient to bubble sooner than later due to the threat of Cyclone (which can only be trinketted). \n"
             +"---\n"
             +"**Alternative:** \n"
-            +"This matchup is real pain in ass for dk preg, any disc comp with a lot of peels for disc is big reee for us. They have clones, off heal, stuns, fear... all those things we gotta watch, dont overlap defensive cooldowns, trade them properly (IBF and DSAC). There are two ways how to beat it: \n"
-            +"1. Go yolo on priest (wait on pillar, when priest pushes like middle of the way, then you go out of the pillar and catch him open, so you can grip him back with after you pop gargoyle and it has more uptime on him). When feral go out of form (mostly offheal or hardcast clone), then use repentance on him, that should waste priest GCD or feral trinket. Priest is most likely dead, try to not get baited with kick, thats your only way to kill him. Track shield, let the dk always break it and dont use judgement on it. \n"
-            +"2. Less yolo and more consistent approach: Hit feral always, be aware of double fears, kite him as much as you can, try to rep priest and hoj him aswell, use gnaw on feral and try to pump him, repeat it every repentance CD. The importan part is kiting an double fear. If feral is sitting DK, then you have to be in frost presence with devo aura. On every close on preg, DK runs away and grip priest off him, so he doesn't get feared \n\n"
+            +"This matchup is real pain in ass for DK & Preg, any disc comp with a lot of peels for disc is big banana for us. They have Cyclones, off heal, stuns, fear... all those things we gotta watch, dont overlap defensive cooldowns, trade them properly (IBF and DSAC). There are two ways how to beat it: \n"
+            +"1. Go yolo on priest (wait on pillar, when priest pushes like middle of the way, then you go out of the pillar and catch him open, so you can grip him back with after you pop gargoyle and it has more uptime on him). When feral go out of form (mostly offheal or hardcast Cyclone), then use repentance on him, that should waste priest GCD or feral trinket. Priest is most likely dead, try to not get baited with kick, thats your only way to kill him. Track shield, let the dk always break it and dont use judgement on it. \n"
+            +"2. Less yolo and more consistent approach: Hit feral always, be aware of double fears, kite him as much as you can, try to rep priest and hoj him aswell, use gnaw on feral and try to pump him, repeat it every repentance CD. The importan part is kiting an double fear. If feral is sitting DK, then you have to be in frost presence with devo aura. On every Cyclone on preg, DK runs away and grip priest off him, so he doesn't get feared \n\n"
             +"---\n"
             +"Simply put: \n"
             +"- 1st way: \n"
             +"\t - Go yolo priest, catch him open, grip back open with all offensive CDs \n"
-            +"\t - Don't get baited with kick thats the most important thing to land while doing this tactic \n"
-            +"\t - Try to rep feral when he is out of form \n"
+            +"\t - Don't get baited with kick, thats the most important thing to land, while doing this tactic \n"
+            +"\t - Try to Repentance feral when he is out of form \n"
             +"- 2nd way: \n"
             +"\t - Hit feral, kite him as much as you can \n"
             +"\t - Repentance on priest, HOJ priest and gnaw on feral \n"
             +"\t - Try not to get double feared (gamechanging) \n"
             +"\t - Don't overlap CDs \n"
-            +"\t - Grip priest away from preg after clone, so he doesn't get feared \n"
+            +"\t - Grip priest away from preg after Cyclone, so he doesn't get feared \n"
         
         
         },
